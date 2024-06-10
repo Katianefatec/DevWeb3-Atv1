@@ -42,7 +42,7 @@ public class ClienteControle {
 		repositorio.save(cliente);
 	}
 
-	@PutMapping("/atualizar")
+	@PutMapping("/atualizar/{id}")
 	public void atualizarCliente(@RequestBody Cliente atualizacao) {
 		Cliente cliente = repositorio.getById(atualizacao.getId());
 		ClienteAtualizador atualizador = new ClienteAtualizador();
@@ -50,9 +50,9 @@ public class ClienteControle {
 		repositorio.save(cliente);
 	}
 
-	@DeleteMapping("/excluir")
-	public void excluirCliente(@RequestBody Cliente exclusao) {
-		Cliente cliente = repositorio.getById(exclusao.getId());
+	@DeleteMapping("/excluir/{id}")
+	public void excluirCliente(@PathVariable Long id) {
+		Cliente cliente = repositorio.getById(id);
 		repositorio.delete(cliente);
 	}
 }
