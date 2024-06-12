@@ -1,12 +1,11 @@
 package com.autobots.automanager.entidades;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import lombok.Data;
+import org.springframework.hateoas.Link;
+
+import java.util.ArrayList;
 
 @Data
 @Entity
@@ -28,5 +27,27 @@ public class Endereco {
 	private String codigoPostal;
 	@Column(unique = false, nullable = true)
 	private String informacoesAdicionais;
+	@Transient
+	private ArrayList<Link> links;
 
+	@Column(name = "links")
+	@Lob
+	private String linksAsString;
+
+	public ArrayList<Link> getLinks() {
+		if (links == null && linksAsString != null) {
+			links = new ArrayList<>();
+		}
+		return links;
+	}
+
+	public void add(Link link) {
+		if (this.links == null) {
+			this.links = new ArrayList<>();
+		}
+
+		if (!this.links.contains(link)) {
+			this.links.add(link);
+		}
+	}
 }
