@@ -1,8 +1,8 @@
 package com.autobots.automanager.controles;
 
 import com.autobots.automanager.entidades.Telefone;
-import com.autobots.automanager.modelo.TelefoneAtualizador;
-import com.autobots.automanager.modelo.TelefoneSelecionador;
+import com.autobots.automanager.modelos.TelefoneAtualizador;
+import com.autobots.automanager.modelos.TelefoneSelecionador;
 import com.autobots.automanager.repositorios.TelefoneRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

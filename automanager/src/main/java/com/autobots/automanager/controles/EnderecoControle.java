@@ -1,9 +1,8 @@
 package com.autobots.automanager.controles;
 
-import com.autobots.automanager.entidades.Cliente;
 import com.autobots.automanager.entidades.Endereco;
-import com.autobots.automanager.modelo.EnderecoAtualizador;
-import com.autobots.automanager.modelo.EnderecoSelecionador;
+import com.autobots.automanager.modelos.EnderecoAtualizador;
+import com.autobots.automanager.modelos.EnderecoSelecionador;
 import com.autobots.automanager.repositorios.EnderecoRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
