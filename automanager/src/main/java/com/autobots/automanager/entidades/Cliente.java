@@ -41,6 +41,7 @@ public class Cliente extends RepresentationModel<Cliente>{
 	@OneToMany(orphanRemoval = true, cascade = CascadeType.ALL)
 	private List<Telefone> telefones = new ArrayList<>();
 
+
 	public void addLink(Link link) {
 		this.addLink(link);
 	}
